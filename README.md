@@ -1,6 +1,6 @@
 # browser-fetch
 
-
+![browser-fetch preview](image.png)
 
 ### ✨ What is it?
 **browser fetch** is a tool to display your specification of web browser, or just for fun!

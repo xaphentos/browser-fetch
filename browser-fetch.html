@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>browser fetch</title>
+  <style>
+    body {
+      background: #1e1e1e;
+      color: #8839ef;
+      font-family: monospace;
+      padding: 20px;
+    }
+    .terminal {
+      background: #00000055;
+      border: 1px solid #8839ef;
+      padding: 20px;
+      border-radius: 10px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="terminal" id="fetch"></div>
+
+  <script>
+    const specs = {
+      "User Agent": navigator.userAgent,
+      "Platform": navigator.platform,
+      "Language": navigator.language,
+      "Online": navigator.onLine ? "Yes" : "No",
+      "Cookies Enabled": navigator.cookieEnabled ? "Yes" : "No",
+      "Screen": `${screen.width}x${screen.height}`,
+      "Color Depth": screen.colorDepth + " bit",
+      "JavaScript Enabled": "Yes", // you're running it!
+    };
+// here you can paste your own ascii art or text
+    let output = `
+░██▄▒█▀▄░▄▀▄░█░░▒█░▄▀▀▒██▀▒█▀▄░░▒█▀▒██▀░▀█▀░▄▀▀░█▄█
+▒█▄█░█▀▄░▀▄▀░▀▄▀▄▀▒▄██░█▄▄░█▀▄▒░░█▀░█▄▄░▒█▒░▀▄▄▒█▒█
+
+  Browser fetch - browser specifications
+  -----------------------------
+`;
+
+    for (const [key, value] of Object.entries(specs)) {
+      output += `${key.padEnd(18)}: ${value}\n`;
+    }
+
+    document.getElementById('fetch').textContent = output;
+  </script>
+</body>
+</html>
+
+<!-- my github is https://github.com/xaphentos -->
